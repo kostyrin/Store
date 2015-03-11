@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Repository.Pattern.Ef6")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("https://genericunitofworkandrepositories.codeplex.com/")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Repository.Pattern.Ef6")]

@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Repository")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("https://genericunitofworkandrepositories.codeplex.com/")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Repository")]
