@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.OData.Query;
+using System.Web.OData.Query;
 using Repository.Pattern.Infrastructure;
 using Repository.Pattern.Repositories;
 
