@@ -17,6 +17,9 @@ namespace Factory.StoreDataModule.Migrations
                         UnitPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Quantity = c.Short(nullable: false),
                         Discount = c.Single(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        CreatedId = c.Int(nullable: false),
+                        ModifiedId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SerialBid", t => t.BidId)
@@ -42,6 +45,9 @@ namespace Factory.StoreDataModule.Migrations
                         ShipRegion = c.String(),
                         ShipPostalCode = c.String(),
                         ShipCountry = c.String(),
+                        IsActive = c.Boolean(nullable: false),
+                        CreatedId = c.Int(nullable: false),
+                        ModifiedId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Shopper", t => t.ShopperId)
@@ -62,6 +68,9 @@ namespace Factory.StoreDataModule.Migrations
                         Country = c.String(),
                         Phone = c.String(),
                         Fax = c.String(),
+                        IsActive = c.Boolean(nullable: false),
+                        CreatedId = c.Int(nullable: false),
+                        ModifiedId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -79,6 +88,9 @@ namespace Factory.StoreDataModule.Migrations
                         UnitsOnOrder = c.Short(),
                         ReorderLevel = c.Short(),
                         Discontinued = c.Boolean(nullable: false),
+                        IsActive = c.Boolean(nullable: false),
+                        CreatedId = c.Int(nullable: false),
+                        ModifiedId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SerialCategory", t => t.CategoryId)
@@ -92,6 +104,9 @@ namespace Factory.StoreDataModule.Migrations
                         CategoryName = c.String(),
                         Description = c.String(),
                         Picture = c.Binary(),
+                        IsActive = c.Boolean(nullable: false),
+                        CreatedId = c.Int(nullable: false),
+                        ModifiedId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id);
             

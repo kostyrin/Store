@@ -30,6 +30,12 @@ namespace Factory.StoreDomainModule
         [Display(AutoGenerateFilter = false)]
         public int Id { get; set; }
 
+        [Display(ShortName = "Активный")]
+        public bool IsActive { get; set; }
+
+        public int CreatedId { get; set; }
+        public int? ModifiedId { get; set; }
+
         #endregion
 
         #region Public Methods

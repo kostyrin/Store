@@ -16,6 +16,7 @@ namespace Factory.StoreServicesModule.Services
     /// </summary>
     public interface IShopperService : IService<Shopper>
     {
+        IEnumerable<Shopper> GetShoppers();
         decimal ShopperOrderTotalByYear(int customerId, int year);
         IEnumerable<Shopper> ShoppersByName(string companyName);
         IEnumerable<SerialShopperBid> GetShopperBids(string country);
@@ -33,6 +34,11 @@ namespace Factory.StoreServicesModule.Services
             : base(repository)
         {
             _repository = repository;
+        }
+
+        public IEnumerable<Shopper> GetShoppers()
+        {
+            return _repository.GetShoppers();
         }
 
         public decimal ShopperOrderTotalByYear(int customerId, int year)

@@ -13,7 +13,7 @@ namespace Factory.StoreDataModule.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201503120912185_InitDb"; }
+            get { return "201503120950112_InitDb"; }
         }
         
         string IMigrationMetadata.Source
