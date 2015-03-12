@@ -9,7 +9,7 @@ namespace Factory.StoreDataModule.Repositories
     // Exmaple: How to add custom methods to a repository.
     public static class ShopperRepository
     {
-        public static decimal GetShopperOrderTotalByYear(this IRepository<Shopper> repository, int shopperId, int year)
+        public static decimal GetShopperBindTotalByYear(this IRepository<Shopper> repository, int shopperId, int year)
         {
             return repository
                 .Queryable()
@@ -20,7 +20,7 @@ namespace Factory.StoreDataModule.Repositories
                 .Sum();
         }
 
-        public static IEnumerable<Shopper> ShoppersByCompany(this IRepositoryAsync<Shopper> repository, string companyName)
+        public static IEnumerable<Shopper> ShoppersByName(this IRepositoryAsync<Shopper> repository, string companyName)
         {
             return repository
                 .Queryable()
