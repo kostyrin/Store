@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Factory.StoreDomainModule.Models;
+using Factory.StoreDomainModule.Entities;
 using Repository.Pattern.Infrastructure;
 
 namespace Factory.StoreDataModule.DataModel
@@ -13,10 +13,9 @@ namespace Factory.StoreDataModule.DataModel
     {
         protected override void Seed(StoreContext context)
         {
-            context.Customers.Add(new Customer()
+            context.Shoppers.Add(new Shopper()
             {
-                CustomerID = 1,
-                CompanyName = "test",
+                Name = "test",
                 Address = "address",
                 ObjectState = ObjectState.Added
             });

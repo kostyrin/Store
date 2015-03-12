@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Factory.StoreDataModule.DataModel;
-using Factory.StoreDomainModule.Models;
+using Factory.StoreDomainModule.Entities;
 using Repository.Pattern.Infrastructure;
 
 namespace Factory.StoreConsoleModule
@@ -15,10 +15,10 @@ namespace Factory.StoreConsoleModule
         {
             using (var context = new StoreContext())
             {
-                Customer find = context.Customers.FirstOrDefault(x => x.CustomerID == 1);
-                foreach (var customer in context.Customers)
+                Shopper find = context.Shoppers.FirstOrDefault(x => x.Id == 1);
+                foreach (var shopper in context.Shoppers)
                 {
-                    Console.WriteLine("customer {0}", customer);
+                    Console.WriteLine("shopper {0}", shopper);
                 }
             }
         }
