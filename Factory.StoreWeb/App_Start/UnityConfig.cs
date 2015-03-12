@@ -1,7 +1,12 @@
 using System;
+using System.Data.Entity;
 using Factory.StoreDataModule.DataModel;
 using Factory.StoreDomainModule.Entities;
 using Factory.StoreServicesModule.Services;
+using Factory.StoreWeb.Controllers;
+using Factory.StoreWeb.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Practices.Unity;
 using Repository.Pattern.DataContext;
 using Repository.Pattern.Ef6;
@@ -51,7 +56,12 @@ namespace Factory.StoreWeb
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IRepositoryAsync<Shopper>, Repository<Shopper>>()
                 //.RegisterType<IRepositoryAsync<Product>, Repository<Product>>()
-                .RegisterType<IShopperService, ShopperService>();
+                .RegisterType<IShopperService, ShopperService>()
+                .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>()
+                .RegisterType<UserManager<ApplicationUser>>()
+                .RegisterType<DbContext, ApplicationDbContext>()
+                .RegisterType<ApplicationUserManager>()
+                .RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }

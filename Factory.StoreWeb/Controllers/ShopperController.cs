@@ -7,16 +7,20 @@ using AutoMapper;
 using Factory.StoreDomainModule.Entities;
 using Factory.StoreServicesModule.Services;
 using Factory.StoreWeb.Models;
+using Repository.Pattern.UnitOfWork;
 
 namespace Factory.StoreWeb.Controllers
 {
+    [Authorize]
     public class ShopperController : Controller
     {
         private readonly IShopperService _shopperService;
+        private readonly IUnitOfWorkAsync _unitOfWorkAsync;
 
-        public ShopperController(IShopperService shopperService)
+        public ShopperController(IShopperService shopperService, IUnitOfWorkAsync unitOfWorkAsync)
         {
             _shopperService = shopperService;
+            _unitOfWorkAsync = unitOfWorkAsync;
         }
         // GET: Shopper
         public ViewResult Index()
