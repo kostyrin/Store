@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Factory.StoreWeb.Models.ShopperViewModel>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Добавить новый товар", "Create", null, new { @class = "btn btn-default" })
 </p>
 <table class="table">
     <tr>
@@ -77,9 +77,9 @@
             @Html.DisplayFor(modelItem => item.Fax)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-default" }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }, new { @class = "btn btn-default" })
         </td>
     </tr>
 }
