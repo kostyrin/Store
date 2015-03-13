@@ -40,18 +40,20 @@ namespace Factory.StoreWeb.Controllers
         // GET: Shopper/Create
         public ActionResult Create()
         {
-            return View();
+            var createShopper = new ShopperFormModel();
+            return View(createShopper);
         }
 
         // POST: Shopper/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public async Task<ActionResult> Create(ShopperFormModel createShopper)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                Shopper shopperToEdit = Mapper.Map<ShopperFormModel, Shopper>(createShopper);
+                _shopperService.Insert(shopperToEdit);
+                await _unitOfWorkAsync.SaveChangesAsync();
+                return RedirectToAction("Index", new { id = createShopper.ShopperId });
             }
             catch
             {

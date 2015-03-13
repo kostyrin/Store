@@ -1800,6 +1800,7 @@
     <Content Include="Views\Shopper\Index.cshtml" />
     <Content Include="Views\Shared\_LeftMenu.cshtml" />
     <Content Include="Views\Shopper\Edit.cshtml" />
+    <Content Include="Views\Shopper\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
