@@ -13,7 +13,9 @@ namespace Factory.StoreWeb.Mapping
 
         protected override void Configure()
         {
-            Mapper.CreateMap<ShopperViewModel, Shopper>()
+            //TODO Здесь мапим только *FormModel!!!!!!!!
+
+            Mapper.CreateMap<ShopperFormModel, Shopper>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ShopperId))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.ShopperName));
         }

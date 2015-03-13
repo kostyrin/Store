@@ -9,6 +9,10 @@ namespace Factory.StoreDataModule.Repositories
     // Exmaple: How to add custom methods to a repository.
     public static class ShopperRepository
     {
+        public static Shopper GetShopperById(this IRepository<Shopper> repository, int shopperId)
+        {
+            return repository.Queryable().FirstOrDefault(s => s.Id == shopperId);
+        }
         public static IEnumerable<Shopper> GetShoppers(this IRepository<Shopper> repository)
         {
             return repository.Queryable();

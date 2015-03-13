@@ -16,6 +16,9 @@ namespace Factory.StoreWeb.Mapping
             Mapper.CreateMap<Shopper, ShopperViewModel>()
                   .ForMember(dest => dest.ShopperId, opt => opt.MapFrom(src => src.Id))
                   .ForMember(dest => dest.ShopperName, opt => opt.MapFrom(src => src.Name));
+            Mapper.CreateMap<Shopper, ShopperFormModel>()
+                  .ForMember(dest => dest.ShopperId, opt => opt.MapFrom(src => src.Id))
+                  .ForMember(dest => dest.ShopperName, opt => opt.MapFrom(src => src.Name));
         }
 
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
@@ -61,18 +62,25 @@ namespace Factory.StoreWeb.Controllers
         // GET: Shopper/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var shopper = _shopperService.GetShopperById(id);
+            ShopperFormModel editShopper = Mapper.Map<Shopper, ShopperFormModel>(shopper);
+            if (shopper == null)
+            {
+                return HttpNotFound();
+            }
+            return View(editShopper);
         }
 
         // POST: Shopper/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public async Task<ActionResult> Edit(ShopperFormModel editShopper)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                Shopper shopperToEdit = Mapper.Map<ShopperFormModel, Shopper>(editShopper);
+                _shopperService.Update(shopperToEdit);
+                await _unitOfWorkAsync.SaveChangesAsync();
+                return RedirectToAction("Index", new { id = editShopper.ShopperId });
             }
             catch
             {

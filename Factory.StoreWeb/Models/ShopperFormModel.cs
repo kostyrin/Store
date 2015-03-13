@@ -1,8 +1,17 @@
-﻿namespace Factory.StoreWeb.Models
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+
+namespace Factory.StoreWeb.Models
 {
-    public class ShopperViewModel
+    public class ShopperFormModel
     {
         public string ShopperId { get; set; }
+
+        [Required(ErrorMessage = "*")]
+        [StringLength(50)]
         public string ShopperName { get; set; }
         public string ContactName { get; set; }
         public string ContactTitle { get; set; }

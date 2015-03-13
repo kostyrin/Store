@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using Factory.StoreDataModule.Models;
 using Factory.StoreDataModule.Repositories;
 using Factory.StoreDomainModule.Entities;
+using Repository.Pattern.Infrastructure;
 using Repository.Pattern.Repositories;
+using Repository.Pattern.UnitOfWork;
 using Service.Pattern;
 
 #endregion
@@ -16,6 +18,7 @@ namespace Factory.StoreServicesModule.Services
     /// </summary>
     public interface IShopperService : IService<Shopper>
     {
+        Shopper GetShopperById(int shopperId);
         IEnumerable<Shopper> GetShoppers();
         decimal ShopperOrderTotalByYear(int customerId, int year);
         IEnumerable<Shopper> ShoppersByName(string companyName);
@@ -29,11 +32,17 @@ namespace Factory.StoreServicesModule.Services
     public class ShopperService : Service<Shopper>, IShopperService
     {
         private readonly IRepositoryAsync<Shopper> _repository;
+        
 
         public ShopperService(IRepositoryAsync<Shopper> repository)
             : base(repository)
         {
             _repository = repository;
+            
+        }
+        public Shopper GetShopperById(int shopperId)
+        {
+            return _repository.GetShopperById(shopperId);
         }
 
         public IEnumerable<Shopper> GetShoppers()
@@ -65,10 +74,19 @@ namespace Factory.StoreServicesModule.Services
             base.Insert(entity);
         }
 
+        public override void Update(Shopper entity)
+        {
+            entity.ObjectState = ObjectState.Modified;
+            base.Update(entity);
+            
+        }
+
         public override void Delete(object id)
         {
             // e.g. add business logic here before deleting
             base.Delete(id);
         }
+
+        
     }
 }
