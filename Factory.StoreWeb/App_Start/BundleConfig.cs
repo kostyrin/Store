@@ -65,12 +65,20 @@ namespace Factory.StoreWeb
                 , "~/Content/Theme/vendors/morris/morris-data.js"
                 //, "~/Content/Theme/vendors/raphael/raphael.js"
                 , "~/Content/Theme/vendors/raphael/raphael-min.js"
+                , "~/Content/Theme/vendors/datatables/js/dataTables.bootstrap.js"
+                , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.js"
+                , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.min.js"
+                , "~/Content/Theme/vendors/datatables/js/dataTables.responsive.js"
+                , "~/Content/Theme/vendors/datatables/js/dataTables.responsive.min.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/Vendors").Include(
                 //"~/Content/Theme/vendors/metis/metisMenu.css"
                  "~/Content/Theme/vendors/metis/metisMenu.min.css"
                 , "~/Content/Theme/vendors/morris/morris.css"
+                , "~/Content/Theme/vendors/datatables/css/jquery.dataTables.css"
+                , "~/Content/Theme/vendors/datatables/css/dataTables.bootstrap.css"
+                , "~/Content/Theme/vendors/datatables/css/dataTables.responsive.css"
                 ));
 
             // Set EnableOptimizations to false for debugging. For more information,
