@@ -32,7 +32,7 @@ namespace Factory.StoreWeb
                   "~/Content/bootstrap.css"
                 , "~/Content/bootstrap-theme.css"
                 , "~/Content/Theme/css/sb-admin-2.css"
-                , "~/Content/Theme/css/font-awesome.css"
+                //, "~/Content/Theme/css/font-awesome.css"
                 , "~/Content/Theme/css/font-awesome.min.css"
                 , "~/Content/Theme/css/timeline.css"
                 ));
@@ -59,12 +59,18 @@ namespace Factory.StoreWeb
                         "~/Content/Theme/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/vendors").Include(
-                "~/Content/Theme/vendors/uniform/jquery.uniform.js"
+                //"~/Content/Theme/vendors/metis/metisMenu.js"
+                 "~/Content/Theme/vendors/metis/metisMenu.min.js"
+                , "~/Content/Theme/vendors/morris/morris.js"
+                , "~/Content/Theme/vendors/morris/morris-data.js"
+                //, "~/Content/Theme/vendors/raphael/raphael.js"
+                , "~/Content/Theme/vendors/raphael/raphael-min.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/Vendors").Include(
-                "~/Content/Theme/vendors/bootstrap-datepicker/css/datepicker.css"
-                , "~/Content/Theme/css/datepicker.fixes.css"
+                //"~/Content/Theme/vendors/metis/metisMenu.css"
+                 "~/Content/Theme/vendors/metis/metisMenu.min.css"
+                , "~/Content/Theme/vendors/morris/morris.css"
                 ));
 
             // Set EnableOptimizations to false for debugging. For more information,

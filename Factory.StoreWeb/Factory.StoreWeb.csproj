@@ -322,6 +322,16 @@
     <Content Include="Content\Theme\images\bg-input.png" />
     <Content Include="Content\Theme\images\meritoo_logo.png" />
     <Content Include="Content\Theme\images\sprite.png" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.css" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.js" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.min.css" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.min.js" />
+    <Content Include="Content\Theme\vendors\morris\morris-data.js" />
+    <Content Include="Content\Theme\vendors\morris\morris.css" />
+    <Content Include="Content\Theme\vendors\morris\morris.js" />
+    <Content Include="Content\Theme\vendors\morris\morris.min.js" />
+    <Content Include="Content\Theme\vendors\raphael\raphael-min.js" />
+    <Content Include="Content\Theme\vendors\raphael\raphael.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -407,7 +417,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Theme\vendors\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
