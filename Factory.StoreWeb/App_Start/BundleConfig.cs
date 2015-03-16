@@ -28,25 +28,21 @@ namespace Factory.StoreWeb
                    , "~/Scripts/twitter-bootstrap-hover-dropdown.js"
                     ));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                  "~/Content/bootstrap.css"
+                , "~/Content/bootstrap-theme.css"
+                , "~/Content/Theme/css/sb-admin-2.css"
+                , "~/Content/Theme/css/font-awesome.css"
+                , "~/Content/Theme/css/font-awesome.min.css"
+                , "~/Content/Theme/css/timeline.css"
+                ));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"
                       ,"~/Scripts/respond.js"
                       , "~/Scripts/twitter-bootstrap-hover-dropdown.js"
+                      , "~/Scripts/sb-admin-2.js"
                       ));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
-
-            //bundles.Add(new StyleBundle("~/Content/css").Include(
-            //          "~/Content/bootstrap.css",
-            //          "~/Content/site.css"));
-
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-theme.css",
-                      "~/Content/Theme/css/bootstrap-admin-theme.css",
-                       "~/Content/Theme/css/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/Theme/base/css").Include(
                         "~/Content/Theme/base/jquery.ui.core.css",
@@ -64,47 +60,12 @@ namespace Factory.StoreWeb
 
             bundles.Add(new ScriptBundle("~/bundles/vendors").Include(
                 "~/Content/Theme/vendors/uniform/jquery.uniform.js"
-                , "~/Content/Theme/vendors/chosen.jquery.js"
-                , "~/Content/Theme/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"
-                ,"~/Content/Theme/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/wysihtml5.js"
-                ,"~/Content/Theme/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/core-b3.js"
-                , "~/Content/Theme/vendors/twitter-bootstrap-wizard/jquery.bootstrap.wizard-for.bootstrap3.js"
-                , "~/Content/Theme/vendors/boostrap3-typeahead/bootstrap3-typeahead.js"
-                , "~/Content/Theme/vendors/easypiechart/jquery.easy-pie-chart.js"
-                , "~/Content/Theme/vendors/ckeditor/ckeditor.js"
-                , "~/Content/Theme/vendors/tinymce/js/tinymce/tinymce.js"
-                ,"~/Content/Theme/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/wysihtml5.js"
-                ,"~/Content/Theme/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/javascripts/bootstrap-wysihtml5/core-b3.js"
-                , "~/Content/Theme/vendors/jGrowl/jquery.jgrowl.js"
-                , "~/Content/Theme/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js"
-                , "~/Content/Theme/vendors/sparkline/jquery.sparkline.js"
-                , "~/Content/Theme/vendors/tablesorter/js/jquery.tablesorter.js"
-                , "~/Content/Theme/vendors/flot/jquery.flot.js"
-                , "~/Content/Theme/vendors/flot/jquery.flot.selection.js"
-                , "~/Content/Theme/vendors/flot/jquery.flot.resize.js"
-                , "~/Content/Theme/vendors/fullcalendar/fullcalendar.js"
                 ));
 
-
-
-            bundles.Add(new StyleBundle("~/Content/Theme").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/bootstrap-theme.css",
-                      "~/Content/Theme/css/bootstrap-admin-theme.css",
-                       "~/Content/Theme/css/site.css"));
             bundles.Add(new StyleBundle("~/Content/Vendors").Include(
                 "~/Content/Theme/vendors/bootstrap-datepicker/css/datepicker.css"
                 , "~/Content/Theme/css/datepicker.fixes.css"
-                , "~/Content/Theme/vendors/uniform/themes/default/css/uniform.default.min.css"
-                , "~/Content/Theme/css/uniform.default.fixes.css"
-                , "~/Content/Theme/vendors/chosen.min.css"
-                ,"~/Content/Theme/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3.css"
-                , "~/Content/Theme/vendors/easypiechart/jquery.easy-pie-chart.css"
-                , "~/Content/Theme/vendors/easypiechart/jquery.easy-pie-chart_custom.css"
-                ,"~/Content/Theme/vendors/bootstrap-wysihtml5-rails-b3/vendor/assets/stylesheets/bootstrap-wysihtml5/core-b3.css"
-                , "~/Content/Theme/vendors/jGrowl/jquery.jgrowl.css"
-                , "~/Content/Theme/vendors/bootstrap-datepicker/css/datepicker.css"
-                , "~/Content/Theme/vendors/fullcalendar/fullcalendar.css"));
+                ));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

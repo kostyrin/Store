@@ -9,11 +9,13 @@ namespace Factory.StoreWeb.HtmlHelperExtensions
 {
     public static class MenuExtensions
     {
+        //<a href="@Url.Action("Index", "Shopper")"><i class="fa  fa-male fa-fw"></i> Покупатели</a>
         public static MvcHtmlString MenuItem(
             this HtmlHelper htmlHelper,
             string text,
             string action,
             string controller,
+            string icon = "glyphicon glyphicon-chevron-right",
             string liCssClass = null
         )
         {
@@ -30,9 +32,9 @@ namespace Factory.StoreWeb.HtmlHelperExtensions
             {
                 li.AddCssClass("active");
             }
-            li.InnerHtml = String.Format("<a href=\"{0}\"><i class=\"glyphicon glyphicon-chevron-right\"></i>{1}</a>",
-               new UrlHelper(htmlHelper.ViewContext.RequestContext).Action(action, controller).ToString() 
-                ,text);
+            li.InnerHtml = String.Format("<a href=\"{0}\"><i class=\"{2}\"></i>{1}</a>",
+               new UrlHelper(htmlHelper.ViewContext.RequestContext).Action(action, controller).ToString()
+                , text, icon);
             return MvcHtmlString.Create(li.ToString());
         }
     }

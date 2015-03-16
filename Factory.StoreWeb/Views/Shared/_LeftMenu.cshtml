@@ -1,37 +1,37 @@
 ﻿@using Factory.StoreWeb.HtmlHelperExtensions
 <!-- left, vertical navbar -->
-<div class="col-md-2 bootstrap-admin-col-left">
-    <ul class="nav navbar-collapse collapse bootstrap-admin-navbar-side">
-        
-        @Html.MenuItem("Домой", "Index", "Home")
-        @Html.MenuItem("Доска", "Index", "Dashboard")
-        @Html.MenuItem("Покупатели", "Index", "Shopper")
-        @Html.MenuItem("Заявка", "Index", "Bid")
-        
-        <li>
-            <a href="#"><span class="badge pull-right">731</span> Orders</a>
-        </li>
-        <li>
-            <a href="#"><span class="badge pull-right">812</span> Invoices</a>
-        </li>
-        <li>
-            <a href="#"><span class="badge pull-right">27</span> Clients</a>
-        </li>
-        <li>
-            <a href="#"><span class="badge pull-right">1,234</span> Users</a>
-        </li>
-        <li>
-            <a href="#"><span class="badge pull-right">2,221</span> Messages</a>
-        </li>
-        <li>
-            <a href="#"><span class="badge pull-right">11</span> Reports</a>
-        </li>
-        <li>
-            <a href="#"><span class="badge pull-right">83</span> Errors</a>
-        </li>
-        <li>
-            <a href="#"><span class="badge pull-right">4,231</span> Logs</a>
-        </li>
-    </ul>
-</div>
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav in" id="side-menu">
+            @Html.MenuItem(" Домой", "Index", "Home", "fa   fa-home fa-fw")
+            @Html.MenuItem(" Доска", "Index", "Dashboard", "fa  fa-dashboard fa-fw")
+            @Html.MenuItem(" Покупатели", "Index", "Shopper", "fa  fa-male fa-fw")
+            @Html.MenuItem(" Заявка", "Index", "Bid", "fa  fa-envelope-o fa-fw")
 
+            @*<li>
+                <a href="#"><span class="badge pull-right">731</span> Orders</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge pull-right">812</span> Invoices</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge pull-right">27</span> Clients</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge pull-right">1,234</span> Users</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge pull-right">2,221</span> Messages</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge pull-right">11</span> Reports</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge pull-right">83</span> Errors</a>
+            </li>
+            <li>
+                <a href="#"><span class="badge pull-right">4,231</span> Logs</a>
+            </li>*@
+        </ul>
+    </div>
+</div>

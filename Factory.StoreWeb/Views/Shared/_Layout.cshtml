@@ -6,64 +6,121 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Factory</title>
-    @Styles.Render("~/Content/Theme")
-    @*@Styles.Render("~/Content/Theme")*@
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-    <body class="bootstrap-admin-with-small-navbar">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="row">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        @Html.ActionLink("Factory", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                    </div>
-                    <div class="collapse navbar-collapse main-navbar-collapse">
-                        <div class="collapse navbar-collapse bootstrap-admin-navbar-sm">
-                            <ul class="nav navbar-nav navbar-right ">
-                                <li>
-                                    <a href="#">Напоминания <i class="glyphicon glyphicon-bell"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#">Настройки <i class="glyphicon glyphicon-cog"></i></a>
-                                </li>
-                                <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
-                                <li>@Html.ActionLink("О компании", "About", "Home")</li>
-                                <li>
-                                    @Html.Partial("_LoginPartial")
-                                </li>
-                            </ul>
-                        </div>
-                    </div><!-- /.navbar-collapse -->
-                    @*<div class="navbar-collapse collapse">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>@Html.ActionLink("About", "About", "Home")</li>
-                                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                                <li>@Html.Partial("_LoginPartial")</li>
-                            </ul>
-                        </div>*@
+    <body>
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Factory", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="row">
-                @RenderBody()
-            </div>
-            <div class="row">
-                <hr>
-                <footer role="contentinfo">
-                    <p>  @DateTime.Now.Year - Copyright &copy; <a href="http://ipositron.ru">Factory</a></p>
-                </footer>
+                <ul class="nav navbar-top-links navbar-right ">
+                    @*<li>
+                        <a href="#">Напоминания <i class="glyphicon glyphicon-bell"></i></a>
+                    </li>
+                    <li>
+                        <a href="#">Настройки <i class="glyphicon glyphicon-cog"></i></a>
+                    </li>
+                    <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("О компании", "About", "Home")</li>*@
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-comment fa-fw"></i> New Comment
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                        <span class="pull-right text-muted small">12 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-tasks fa-fw"></i> New Task
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-alerts -->
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            @Html.Partial("_LoginPartial")
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                </ul>
+                @Html.Partial("_LeftMenu")
+                
+            </nav>
+            
+            <div id="page-wrapper">
+                <div class="row">
+                    @RenderBody()
+                </div>
+                <div class="row">
+                        
+                    <hr>
+                    <footer role="contentinfo">
+                        <p>  @DateTime.Now.Year - Copyright &copy; <a href="http://ipositron.ru">Factory</a></p>
+                    </footer>
+                </div>
             </div>
         </div>
 
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/bootstrap")
         @RenderSection("scripts", required: false)
-    </body>
+</body>
 </html>
