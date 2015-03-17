@@ -201,6 +201,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BidController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -208,16 +209,22 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HtmlHelperExtensions\FactoryWebHelperFunctions.cs" />
     <Compile Include="HtmlHelperExtensions\MenuExtensions.cs" />
     <Compile Include="Mapping\AutoMapperConfiguration.cs" />
     <Compile Include="Mapping\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mapping\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BidViewModel.cs" />
     <Compile Include="Models\DashboardViewModel.cs" />
+    <Compile Include="Models\Domain.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Navbar.cs" />
+    <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\ShopperFormModel.cs" />
     <Compile Include="Models\ShopperViewModel.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -226,6 +233,24 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Theme\css\AdminLTE.css" />
+    <Content Include="Content\Theme\css\skins\skin-black.css" />
+    <Content Include="Content\Theme\css\skins\skin-black.min.css" />
+    <Content Include="Content\Theme\css\skins\skin-blue.css" />
+    <Content Include="Content\Theme\css\skins\skin-blue.min.css" />
+    <Content Include="Content\Theme\css\skins\skin-green.css" />
+    <Content Include="Content\Theme\css\skins\skin-green.min.css" />
+    <Content Include="Content\Theme\css\skins\skin-purple.css" />
+    <Content Include="Content\Theme\css\skins\skin-purple.min.css" />
+    <Content Include="Content\Theme\css\skins\skin-red.css" />
+    <Content Include="Content\Theme\css\skins\skin-red.min.css" />
+    <Content Include="Content\Theme\css\skins\skin-yellow.css" />
+    <Content Include="Content\Theme\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\Theme\css\skins\_all-skins.css" />
+    <Content Include="Content\Theme\css\skins\_all-skins.min.css" />
+    <Content Include="Content\Theme\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.css" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.min.css" />
     <Content Include="Content\Theme\vendors\datatables\css\dataTables.autoFill.css" />
     <Content Include="Content\Theme\vendors\datatables\css\dataTables.autoFill.min.css" />
     <Content Include="Content\Theme\vendors\datatables\css\dataTables.bootstrap.css" />
@@ -368,23 +393,11 @@
     <Content Include="Content\Theme\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\Theme\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\Theme\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Content\Theme\css\font-awesome.css" />
-    <Content Include="Content\Theme\css\font-awesome.min.css" />
-    <Content Include="Content\Theme\css\sb-admin-2.css" />
-    <Content Include="Content\Theme\css\timeline.css" />
     <Content Include="Content\Theme\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Theme\images\bg-input-focus.png" />
     <Content Include="Content\Theme\images\bg-input.png" />
     <Content Include="Content\Theme\images\meritoo_logo.png" />
     <Content Include="Content\Theme\images\sprite.png" />
-    <Content Include="Content\Theme\vendors\metis\metisMenu.css" />
-    <Content Include="Content\Theme\vendors\metis\metisMenu.js" />
-    <Content Include="Content\Theme\vendors\metis\metisMenu.min.css" />
-    <Content Include="Content\Theme\vendors\metis\metisMenu.min.js" />
-    <Content Include="Content\Theme\vendors\morris\morris-data.js" />
-    <Content Include="Content\Theme\vendors\morris\morris.css" />
-    <Content Include="Content\Theme\vendors\morris\morris.js" />
-    <Content Include="Content\Theme\vendors\morris\morris.min.js" />
     <Content Include="Content\Theme\vendors\raphael\raphael-min.js" />
     <Content Include="Content\Theme\vendors\raphael\raphael.js" />
     <Content Include="favicon.ico" />
@@ -402,7 +415,16 @@
     <Content Include="Content\Theme\fonts\FontAwesome.otf" />
     <Content Include="Content\Theme\vendors\datatables\css\dataTables.responsive.scss" />
     <Content Include="Content\Theme\vendors\datatables\css\dataTables.jqueryui.scss" />
+    <Content Include="Content\Theme\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Theme\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Theme\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Theme\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\AdminLTE\app.js" />
+    <Content Include="Scripts\AdminLTE\app.min.js" />
+    <Content Include="Scripts\AdminLTE\demo.js" />
+    <Content Include="Scripts\AdminLTE\pages\dashboard.js" />
+    <Content Include="Scripts\AdminLTE\pages\dashboard2.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Theme\vendors\datatables\js\dataTables.autoFill.js" />
@@ -440,13 +462,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.js" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\npm.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\sb-admin-2.js" />
     <Content Include="Scripts\twitter-bootstrap-hover-dropdown.js" />
     <Content Include="Scripts\twitter-bootstrap-hover-dropdown.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -494,9 +513,14 @@
     <Content Include="Views\Shared\_LeftMenu.cshtml" />
     <Content Include="Views\Shopper\Edit.cshtml" />
     <Content Include="Views\Shopper\Create.cshtml" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.min.js.map" />
+    <Content Include="Content\Theme\vendors\metis\metisMenu.js.map" />
+    <Content Include="Views\Shared\_Layout .old.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Theme\vendors\morris\" />
+    <Folder Include="Views\Navbar\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

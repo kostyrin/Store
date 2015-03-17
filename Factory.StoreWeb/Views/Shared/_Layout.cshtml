@@ -8,120 +8,77 @@
     <title>@ViewBag.Title - Factory</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <!-- Font Awesome Icons -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="~/Content/Theme/css/AdminLTE.css" rel="stylesheet" type="text/css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="~/Content/Theme/css/skins/skin-green.css" rel="stylesheet" type="text/css" />
 
 </head>
-    <body>
-        <div id="wrapper">
-            <!-- Navigation -->
-            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("Factory", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <ul class="nav navbar-top-links navbar-right ">
-                    @*<li>
-                        <a href="#">Напоминания <i class="glyphicon glyphicon-bell"></i></a>
-                    </li>
-                    <li>
-                        <a href="#">Настройки <i class="glyphicon glyphicon-cog"></i></a>
-                    </li>
-                    <li>@Html.ActionLink("Контакты", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("О компании", "About", "Home")</li>*@
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-comment fa-fw"></i> New Comment
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small">12 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-tasks fa-fw"></i> New Task
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#">
-                                    <strong>See All Alerts</strong>
-                                    <i class="fa fa-angle-right"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-alerts -->
-                    </li>
+<body class="skin-green fixed">
 
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+    <header class="main-header">
+        <a href='@Url.Action("Index", "Home")' class="logo">
+            Factory
+        </a>
+
+        <nav class="navbar navbar-static-top" role="navigation">
+            <div class="navbar-right">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown user user-menu">
+                        <a href='#' class="dropdown-toggle" data-toggle="dropdown">
+                            <span>Имя Фамилия<i class="caret"></i></span>
                         </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            @Html.Partial("_LoginPartial")
+                        <ul class="dropdown-menu">
+                            <li class="user-header bg-light-blue">
+                                <p>Имя Фамилия</p>
+                            </li>
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="@Url.Action("MyProfile", "Account")" class="btn btn-default btn-flat">Профиль</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href='@Url.Action("Logout", "Account")' class="btn btn-default btn-flat">Выйти</a>
+                                </div>
+                            </li>
                         </ul>
-                        <!-- /.dropdown-user -->
+
                     </li>
                 </ul>
-
-                @Html.Partial("_LeftMenu")
-                
-            </nav>
-            
-            <div id="page-wrapper">
-                <div class="row">
-                    @RenderBody()
-                </div>
-                <div class="row">
-                        
-                    <hr>
-                    <footer role="contentinfo">
-                        <p>  @DateTime.Now.Year - Copyright &copy; <a href="http://ipositron.ru">Factory</a></p>
-                    </footer>
-                </div>
             </div>
-        </div>
+        </nav>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    </header>
+    
+    <div class="wrapper">
+        
+        <aside class="main-sidebar">
+            <section class="sidebar">
+                @Html.Partial("_LeftMenu")
+            </section>
+
+        </aside>
+        
+        <aside class="right-side">
+            @RenderBody()
+        </aside>
+            
+    </div>
+         
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script>
+        $(document).ready(function () {
+            @RenderSection("Scripts", required: false)
+        });
+    </script>
 </body>
+
+
+
 </html>

@@ -8,6 +8,10 @@ namespace Factory.StoreWeb
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            // Set EnableOptimizations to false for debugging. For more information,
+            // visit http://go.microsoft.com/fwlink/?LinkId=301862
+            BundleTable.EnableOptimizations = false;
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -23,25 +27,21 @@ namespace Factory.StoreWeb
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                    "~/Scripts/bootstrap.js"
-                   , "~/Scripts/twitter-bootstrap-hover-dropdown.js"
-                    ));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                   "~/Content/bootstrap.css"
                 , "~/Content/bootstrap-theme.css"
-                , "~/Content/Theme/css/sb-admin-2.css"
+                , "~/Content/Theme/css/AdminLTE.css"
+                , "~/Content/Theme/css/skins/skin-green.css"
                 //, "~/Content/Theme/css/font-awesome.css"
-                , "~/Content/Theme/css/font-awesome.min.css"
-                , "~/Content/Theme/css/timeline.css"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"
-                      ,"~/Scripts/respond.js"
-                      , "~/Scripts/twitter-bootstrap-hover-dropdown.js"
-                      , "~/Scripts/sb-admin-2.js"
+                      //, "~/Scripts/twitter-bootstrap-hover-dropdown.js"
+                      , "~/Scripts/AdminLTE/app.js"
+                      , "~/Scripts/AdminLTE/demo.js"
+                      , "~/Scripts/AdminLTE/pages/dashboard.js"
+                      , "~/Scripts/AdminLTE/pages/dashboard2.js"
                       ));
 
             bundles.Add(new StyleBundle("~/Content/Theme/base/css").Include(
@@ -58,32 +58,30 @@ namespace Factory.StoreWeb
                         "~/Content/Theme/base/jquery.ui.progressbar.css",
                         "~/Content/Theme/base/jquery.ui.theme.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/vendors").Include(
-                //"~/Content/Theme/vendors/metis/metisMenu.js"
-                 "~/Content/Theme/vendors/metis/metisMenu.min.js"
-                , "~/Content/Theme/vendors/morris/morris.js"
-                , "~/Content/Theme/vendors/morris/morris-data.js"
-                //, "~/Content/Theme/vendors/raphael/raphael.js"
-                , "~/Content/Theme/vendors/raphael/raphael-min.js"
-                , "~/Content/Theme/vendors/datatables/js/dataTables.bootstrap.js"
-                , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.js"
-                , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.min.js"
-                , "~/Content/Theme/vendors/datatables/js/dataTables.responsive.js"
-                , "~/Content/Theme/vendors/datatables/js/dataTables.responsive.min.js"
-                ));
+            //bundles.Add(new ScriptBundle("~/bundles/vendors").Include(
+            //    //"~/Content/Theme/vendors/metis/metisMenu.js"
+            //     "~/Content/Theme/vendors/metis/metisMenu.min.js"
+            //    , "~/Content/Theme/vendors/morris/morris.js"
+            //    , "~/Content/Theme/vendors/morris/morris-data.js"
+            //    //, "~/Content/Theme/vendors/raphael/raphael.js"
+            //    , "~/Content/Theme/vendors/raphael/raphael-min.js"
+            //    , "~/Content/Theme/vendors/datatables/js/dataTables.bootstrap.js"
+            //    , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.js"
+            //    , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.min.js"
+            //    , "~/Content/Theme/vendors/datatables/js/dataTables.responsive.js"
+            //    , "~/Content/Theme/vendors/datatables/js/dataTables.responsive.min.js"
+            //    ));
 
-            bundles.Add(new StyleBundle("~/Content/Vendors").Include(
-                //"~/Content/Theme/vendors/metis/metisMenu.css"
-                 "~/Content/Theme/vendors/metis/metisMenu.min.css"
-                , "~/Content/Theme/vendors/morris/morris.css"
-                , "~/Content/Theme/vendors/datatables/css/jquery.dataTables.css"
-                , "~/Content/Theme/vendors/datatables/css/dataTables.bootstrap.css"
-                , "~/Content/Theme/vendors/datatables/css/dataTables.responsive.css"
-                ));
+            //bundles.Add(new StyleBundle("~/Content/Vendors").Include(
+            //    //"~/Content/Theme/vendors/metis/metisMenu.css"
+            //     "~/Content/Theme/vendors/metis/metisMenu.min.css"
+            //    , "~/Content/Theme/vendors/morris/morris.css"
+            //    , "~/Content/Theme/vendors/datatables/css/jquery.dataTables.css"
+            //    , "~/Content/Theme/vendors/datatables/css/dataTables.bootstrap.css"
+            //    , "~/Content/Theme/vendors/datatables/css/dataTables.responsive.css"
+            //    ));
 
-            // Set EnableOptimizations to false for debugging. For more information,
-            // visit http://go.microsoft.com/fwlink/?LinkId=301862
-            //BundleTable.EnableOptimizations = true;
+            
         }
     }
 }

@@ -1,15 +1,29 @@
 ﻿@using Factory.StoreWeb.HtmlHelperExtensions
 @Styles.Render("~/Content/Vendors")
 <!-- left, vertical navbar -->
-<div class="navbar-default sidebar" role="navigation">
-    <div class="sidebar-nav navbar-collapse">
-        <ul class="nav in" id="side-menu">
-            @Html.MenuItem(" Домой", "Index", "Home", "fa   fa-home fa-fw")
+<ul class="sidebar-menu">
+    @*@Html.MenuItem(" Домой", "Index", "Home", "fa   fa-home fa-fw")
             @Html.MenuItem(" Доска", "Index", "Dashboard", "fa  fa-dashboard fa-fw")
             @Html.MenuItem(" Покупатели", "Index", "Shopper", "fa  fa-male fa-fw")
-            @Html.MenuItem(" Заявка", "Index", "Bid", "fa  fa-envelope-o fa-fw")
+            @Html.MenuItem(" Заявка", "Index", "Bid", "fa  fa-envelope-o fa-fw")*@
+            
+    <li class="header">MAIN NAVIGATION</li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href='@Url.Action("Index", "Home")'><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+            <li><a href='@Url.Action("Index", "Home")'><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href='@Url.Action("Index", "Shopper")'>
+            <i class="fa fa-male"></i> <span>Покупатели</span>
+        </a>
+    </li>
 
-            @*<li>
+    @*<li>
                 <a href="#"><span class="badge pull-right">731</span> Orders</a>
             </li>
             <li>
@@ -33,9 +47,8 @@
             <li>
                 <a href="#"><span class="badge pull-right">4,231</span> Logs</a>
             </li>*@
-        </ul>
-    </div>
-</div>
+</ul>
+
 @section scripts
 {
     @Scripts.Render("~/bundles/vendors")
