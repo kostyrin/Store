@@ -55,13 +55,15 @@ namespace Factory.StoreWeb
                     )
                 .RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager())
                 .RegisterType<IRepositoryAsync<Shopper>, Repository<Shopper>>()
+                .RegisterType<IRepositoryAsync<SerialBid>, Repository<SerialBid>>()
                 //.RegisterType<IRepositoryAsync<Product>, Repository<Product>>()
                 .RegisterType<IShopperService, ShopperService>()
+                .RegisterType<IBidService, BidService>()
                 .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>()
                 .RegisterType<UserManager<ApplicationUser>>()
                 .RegisterType<DbContext, ApplicationDbContext>()
-                .RegisterType<ApplicationUserManager>();
-            container.RegisterType<AccountController>(new InjectionConstructor());
+                .RegisterType<ApplicationUserManager>()
+                .RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }

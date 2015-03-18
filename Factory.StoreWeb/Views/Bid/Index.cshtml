@@ -1,0 +1,144 @@
+﻿@model IEnumerable<Factory.StoreWeb.Models.BidViewModel>
+
+@{
+    ViewBag.Title = "Bid";
+}
+@Styles.Render("~/Content/Vendors")
+@section ContentHeader{
+    <h1>
+        @ViewBag.Title
+    </h1>
+}
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Покупатели</h3>
+                    <div class="box-tools">
+                        <div class="input-group">
+                            <a class="btn btn-success btn-sm" href='@Url.Action("Create", "Shopper")'><i class="fa  fa-plus"></i></a>
+                            <input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search" />
+                            <div class="input-group-btn">
+                                <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box-body table-responsive">
+                    <div class="dataTables_wrapper form-inline">
+                        <table class="table">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Shopper)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EmployeeId)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BidDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequiredDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShippedDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShipVia)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Freight)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShipName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShipAddress)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShipCity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShipRegion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShipPostalCode)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShipCountry)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Shopper)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmployeeId)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BidDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequiredDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShippedDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShipVia)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Freight)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShipName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShipAddress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShipCity)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShipRegion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShipPostalCode)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShipCountry)
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-primary btn-sm" href='@Url.Action("Edit", "Bid", new { id = item.BidId })'><i class="fa  fa-pencil"></i></a>
+                                    </td>
+                                </tr>
+                            }
+
+
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section scripts
+{
+        @Scripts.Render("~/bundles/vendors")
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#dataTables-example').DataTable({
+                    responsive: true
+                });
+            });
+        </script>
+    }

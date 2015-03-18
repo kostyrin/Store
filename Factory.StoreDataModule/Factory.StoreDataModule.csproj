@@ -59,6 +59,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SerialShopperBid.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BidRepository.cs" />
     <Compile Include="Repositories\ShopperRepository.cs" />
   </ItemGroup>
   <ItemGroup>

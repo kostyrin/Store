@@ -3,15 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
+using Factory.StoreDomainModule.Entities;
+using Factory.StoreServicesModule.Services;
+using Factory.StoreWeb.Models;
+using Repository.Pattern.UnitOfWork;
 
 namespace Factory.StoreWeb.Controllers
 {
     public class BidController : Controller
     {
-        // GET: Bid
-        public ActionResult Index()
+        private readonly IBidService _bidService;
+        private readonly IShopperService _shopperService;
+        private readonly IUnitOfWorkAsync _unitOfWorkAsync;
+
+        public BidController(IBidService bidService, IShopperService shopperService, IUnitOfWorkAsync unitOfWorkAsync)
         {
-            return View();
+            _bidService = bidService;
+            _shopperService = shopperService;
+            _unitOfWorkAsync = unitOfWorkAsync;
+        }
+        // GET: Bid
+        public ViewResult Index()
+        {
+            var bids = _bidService.GetBids();
+            var bidsDetails = Mapper.Map<IEnumerable<SerialBid>, IEnumerable<BidViewModel>>(bids);
+            foreach (var bid in bidsDetails)
+            {
+                var shopper = _shopperService.GetShopperById(bid.ShopperId);
+                bid.Shopper = shopper.Name;
+            }
+            return View(bidsDetails);
         }
 
         // GET: Bid/Details/5
@@ -45,7 +67,13 @@ namespace Factory.StoreWeb.Controllers
         // GET: Bid/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var bid = _bidService.GetBidById(id);
+            var editBid = Mapper.Map<SerialBid, BidFormModel>(bid);
+            if (bid == null)
+            {
+                return HttpNotFound();
+            }
+            return View(editBid);
         }
 
         // POST: Bid/Edit/5

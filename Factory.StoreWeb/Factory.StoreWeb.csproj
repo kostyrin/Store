@@ -215,6 +215,7 @@
     <Compile Include="Mapping\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mapping\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\BidFormModel.cs" />
     <Compile Include="Models\BidViewModel.cs" />
     <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\Domain.cs" />
@@ -479,11 +480,12 @@
     <Content Include="Content\Theme\vendors\metis\metisMenu.js.map" />
     <Content Include="Views\Shared\_Layout .old.cshtml" />
     <Content Include="Views\Shared\_MainHeaderPartial.cshtml" />
+    <Content Include="Views\Bid\Index.cshtml" />
+    <Content Include="Views\Bid\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Theme\vendors\morris\" />
-    <Folder Include="Views\Bid\" />
     <Folder Include="Views\Navbar\" />
   </ItemGroup>
   <ItemGroup>
