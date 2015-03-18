@@ -11,8 +11,8 @@ namespace Factory.StoreDataModule.Migrations
                 "dbo.SerialBidDetail",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        BidId = c.Int(nullable: false),
+                        Id = c.Long(nullable: false, identity: true),
+                        BidId = c.Long(nullable: false),
                         ProductId = c.Int(nullable: false),
                         UnitPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Quantity = c.Short(nullable: false),
@@ -31,7 +31,7 @@ namespace Factory.StoreDataModule.Migrations
                 "dbo.SerialBid",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Long(nullable: false, identity: true),
                         ShopperId = c.Int(nullable: false),
                         EmployeeId = c.Int(),
                         BidDate = c.DateTime(),
@@ -69,8 +69,6 @@ namespace Factory.StoreDataModule.Migrations
                         Phone = c.String(),
                         Fax = c.String(),
                         IsActive = c.Boolean(nullable: false),
-                        CreatedId = c.Int(nullable: false),
-                        ModifiedId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -82,15 +80,13 @@ namespace Factory.StoreDataModule.Migrations
                         ProductName = c.String(),
                         SupplierId = c.Int(),
                         CategoryId = c.Int(),
-                        QuantityPerUnit = c.String(),
+                        QuantityPerUnit = c.Int(nullable: false),
                         UnitPrice = c.Decimal(precision: 18, scale: 2),
                         UnitsInStock = c.Short(),
                         UnitsOnOrder = c.Short(),
                         ReorderLevel = c.Short(),
                         Discontinued = c.Boolean(nullable: false),
                         IsActive = c.Boolean(nullable: false),
-                        CreatedId = c.Int(nullable: false),
-                        ModifiedId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.SerialCategory", t => t.CategoryId)
@@ -105,8 +101,6 @@ namespace Factory.StoreDataModule.Migrations
                         Description = c.String(),
                         Picture = c.Binary(),
                         IsActive = c.Boolean(nullable: false),
-                        CreatedId = c.Int(nullable: false),
-                        ModifiedId = c.Int(),
                     })
                 .PrimaryKey(t => t.Id);
             

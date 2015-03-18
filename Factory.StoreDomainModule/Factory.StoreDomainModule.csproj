@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityDocument.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="Entities\SerialCategory.cs" />
     <Compile Include="Entities\Shopper.cs" />

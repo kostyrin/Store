@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Factory.StoreDomainModule.Entities
 {
-    public partial class SerialBid : EntityBase
+    public partial class SerialBid : EntityDocument
     {
         public SerialBid()
         {

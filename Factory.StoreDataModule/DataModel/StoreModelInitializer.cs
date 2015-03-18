@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
@@ -13,13 +14,38 @@ namespace Factory.StoreDataModule.DataModel
     {
         protected override void Seed(StoreContext context)
         {
-            context.Shoppers.Add(new Shopper()
+            var shopper = new Shopper()
             {
-                Name = "test",
-                Address = "address",
+                Name = "Позитрон",
+                Address = "Верхнеозерная 24",
                 ObjectState = ObjectState.Added
+            };
+            context.Shoppers.Add(shopper);
+
+            var product = new SerialProduct()
+            {
+                ObjectState = ObjectState.Added,
+                ProductName = "Беговая дорожка"
+            };
+
+            context.SerialBids.Add(entity: new SerialBid()
+            {
+                ObjectState = ObjectState.Added,
+                Shopper = shopper,
+                BidDate = DateTime.Now,
+                BidDetails = new Collection<SerialBidDetail>(new SerialBidDetail[]
+                {
+                    new SerialBidDetail()
+                    {
+                        ObjectState = ObjectState.Added,
+                        Product = product,
+                    } 
+                })
             });
+
             context.SaveChanges();
+
+
         }
     }
 }

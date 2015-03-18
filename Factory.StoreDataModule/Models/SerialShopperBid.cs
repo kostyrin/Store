@@ -6,7 +6,7 @@ namespace Factory.StoreDataModule.Models
     {
         public int ShopperId { get; set; }
         public string ContactName { get; set; }
-        public int BidId { get; set; }
+        public long BidId { get; set; }
         public DateTime? BidDate { get; set; }
     }
 }

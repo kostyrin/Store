@@ -12,7 +12,7 @@ namespace Factory.StoreDomainModule
     /// <summary>
     /// Base class for entities
     /// </summary>
-    public abstract class EntityBase : Entity
+    public abstract class EntityDocument : Entity
     {
         #region Members
 
@@ -28,10 +28,13 @@ namespace Factory.StoreDomainModule
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Display(AutoGenerateFilter = false)]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         [Display(ShortName = "Активный")]
         public bool IsActive { get; set; }
+
+        public int CreatedId { get; set; }
+        public int? ModifiedId { get; set; }
 
         #endregion
 
@@ -109,7 +112,7 @@ namespace Factory.StoreDomainModule
 
         }
 
-        public static bool operator ==(EntityBase left, EntityBase right)
+        public static bool operator ==(EntityDocument left, EntityDocument right)
         {
             if (Object.Equals(left, null))
                 return (Object.Equals(right, null)) ? true : false;
@@ -117,7 +120,7 @@ namespace Factory.StoreDomainModule
                 return left.Equals(right);
         }
 
-        public static bool operator !=(EntityBase left, EntityBase right)
+        public static bool operator !=(EntityDocument left, EntityDocument right)
         {
             return !(left == right);
         }

@@ -30,26 +30,7 @@ namespace Factory.StoreWeb.Controllers
             var shoppersDetails = Mapper.Map<IEnumerable<Shopper>, IEnumerable<ShopperViewModel>>(shoppers);
             return View(shoppersDetails);
         }
-
-        public ActionResult Index(int page = 1)
-        {
-            try
-            {
-                if (page < 1)
-                    page = 1;
-                var shoppers = _shopperService.GetShoppers();
-                var shoppersDetails = Mapper.Map<IEnumerable<Shopper>, IEnumerable<ShopperViewModel>>(shoppers);
-                IList<ShopperViewModel> shops = shoppersDetails.OrderBy(s => s.ShopperName).ToList();
-                return View(shops);
-            }
-            catch (Exception ex)
-            {
-                //Log.Error(ex);
-                return RedirectToAction("Index", "Error");
-            }
-
-        }
-
+        
         // GET: Shopper/Details/5
         public ActionResult Details(int id)
         {

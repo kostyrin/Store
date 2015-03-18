@@ -52,9 +52,9 @@
     <Compile Include="DataModel\StoreContext.cs" />
     <Compile Include="DataModel\StoreModelInitializer.cs" />
     <Compile Include="DataModule.cs" />
-    <Compile Include="Migrations\201503120950112_InitDb.cs" />
-    <Compile Include="Migrations\201503120950112_InitDb.Designer.cs">
-      <DependentUpon>201503120950112_InitDb.cs</DependentUpon>
+    <Compile Include="Migrations\201503181334471_InitDb.cs" />
+    <Compile Include="Migrations\201503181334471_InitDb.Designer.cs">
+      <DependentUpon>201503181334471_InitDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\SerialShopperBid.cs" />
@@ -80,8 +80,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201503120950112_InitDb.resx">
-      <DependentUpon>201503120950112_InitDb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201503181334471_InitDb.resx">
+      <DependentUpon>201503181334471_InitDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,8 +1,8 @@
 namespace Factory.StoreDomainModule.Entities
 {
-    public partial class SerialBidDetail : EntityBase
+    public partial class SerialBidDetail : EntityDocument
     {
-        public int BidId { get; set; }
+        public long BidId { get; set; }
         public int ProductId { get; set; }
         public decimal UnitPrice { get; set; }
         public short Quantity { get; set; }

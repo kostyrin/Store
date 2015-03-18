@@ -60,8 +60,8 @@ namespace Factory.StoreWeb
                 .RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>()
                 .RegisterType<UserManager<ApplicationUser>>()
                 .RegisterType<DbContext, ApplicationDbContext>()
-                .RegisterType<ApplicationUserManager>()
-                .RegisterType<AccountController>(new InjectionConstructor());
+                .RegisterType<ApplicationUserManager>();
+            container.RegisterType<AccountController>(new InjectionConstructor());
         }
     }
 }

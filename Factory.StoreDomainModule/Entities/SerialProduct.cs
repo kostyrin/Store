@@ -13,7 +13,7 @@ namespace Factory.StoreDomainModule.Entities
         public string ProductName { get; set; }
         public Nullable<int> SupplierId { get; set; }
         public Nullable<int> CategoryId { get; set; }
-        public string QuantityPerUnit { get; set; }
+        public int QuantityPerUnit { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
         public Nullable<short> UnitsInStock { get; set; }
         public Nullable<short> UnitsOnOrder { get; set; }
