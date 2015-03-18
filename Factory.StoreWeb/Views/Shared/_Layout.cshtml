@@ -8,70 +8,43 @@
     <title>@ViewBag.Title - Factory</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <!-- Font Awesome Icons -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <!-- Ionicons -->
-    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-    <!-- Theme style -->
-    <link href="~/Content/Theme/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link href="~/Content/Theme/css/skins/skin-green.css" rel="stylesheet" type="text/css" />
-
 </head>
 <body class="skin-green fixed">
-
-    <header class="main-header">
-        <a href='@Url.Action("Index", "Home")' class="logo">
-            Factory
-        </a>
-
-        <nav class="navbar navbar-static-top" role="navigation">
-            <div class="navbar-right">
-                <ul class="nav navbar-nav">
-
-                    <li class="dropdown user user-menu">
-                        <a href='#' class="dropdown-toggle" data-toggle="dropdown">
-                            <span>Имя Фамилия<i class="caret"></i></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="user-header bg-light-blue">
-                                <p>Имя Фамилия</p>
-                            </li>
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="@Url.Action("MyProfile", "Account")" class="btn btn-default btn-flat">Профиль</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href='@Url.Action("Logout", "Account")' class="btn btn-default btn-flat">Выйти</a>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-    </header>
     
+    <!-- Site wrapper -->
     <div class="wrapper">
         
-        <aside class="main-sidebar">
+        @Html.Partial("_MainHeaderPartial")
+        
+        <!-- Left side column. contains the sidebar -->
+        <div class="main-sidebar">
             <section class="sidebar">
                 @Html.Partial("_LeftMenu")
             </section>
 
-        </aside>
+        </div>
         
-        <aside class="right-side">
-            @RenderBody()
-        </aside>
-            
+        <section class="content-header">
+            @RenderSection("ContentHeader", required: false)
+        </section>
+
+        <div class="content-wrapper">
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+        
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Версия</b> 1.0
+            </div>
+            <strong>Copyright © 2015 <a href="http://www.ipositron.ru">Позитрон</a>.</strong> All rights reserved.
+        </footer>
     </div>
          
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/js")
+    
     <script>
         $(document).ready(function () {
             @RenderSection("Scripts", required: false)

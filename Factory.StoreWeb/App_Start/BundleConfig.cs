@@ -32,16 +32,15 @@ namespace Factory.StoreWeb
                 , "~/Content/bootstrap-theme.css"
                 , "~/Content/Theme/css/AdminLTE.css"
                 , "~/Content/Theme/css/skins/skin-green.css"
-                //, "~/Content/Theme/css/font-awesome.css"
+                , "~/Content/Theme/css/font-awesome.css"
+                , "~/Content/Theme/css/ionicons.css"
                 ));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
                       "~/Scripts/bootstrap.js"
-                      //, "~/Scripts/twitter-bootstrap-hover-dropdown.js"
+                      , "~/Scripts/twitter-bootstrap-hover-dropdown.js"
                       , "~/Scripts/AdminLTE/app.js"
-                      , "~/Scripts/AdminLTE/demo.js"
-                      , "~/Scripts/AdminLTE/pages/dashboard.js"
-                      , "~/Scripts/AdminLTE/pages/dashboard2.js"
+                      
                       ));
 
             bundles.Add(new StyleBundle("~/Content/Theme/base/css").Include(
@@ -58,28 +57,36 @@ namespace Factory.StoreWeb
                         "~/Content/Theme/base/jquery.ui.progressbar.css",
                         "~/Content/Theme/base/jquery.ui.theme.css"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/vendors").Include(
-            //    //"~/Content/Theme/vendors/metis/metisMenu.js"
-            //     "~/Content/Theme/vendors/metis/metisMenu.min.js"
-            //    , "~/Content/Theme/vendors/morris/morris.js"
-            //    , "~/Content/Theme/vendors/morris/morris-data.js"
-            //    //, "~/Content/Theme/vendors/raphael/raphael.js"
-            //    , "~/Content/Theme/vendors/raphael/raphael-min.js"
-            //    , "~/Content/Theme/vendors/datatables/js/dataTables.bootstrap.js"
-            //    , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.js"
-            //    , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.min.js"
-            //    , "~/Content/Theme/vendors/datatables/js/dataTables.responsive.js"
-            //    , "~/Content/Theme/vendors/datatables/js/dataTables.responsive.min.js"
-            //    ));
+            bundles.Add(new ScriptBundle("~/bundles/vendors").Include(
+                  "~/Scripts/jquery-{version}.js"
+                , "~/Scripts/jquery-ui-{version}.js"
+                , "~/Scripts/bootstrap.js"
+                , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.js"
+                , "~/Scripts/AdminLTE/app.js"
+                , "~/Scripts/AdminLTE/demo.js"
+                , "~/Scripts/AdminLTE/pages/dashboard.js"
+                , "~/Scripts/AdminLTE/pages/dashboard2.js"
+                //, "~/Content/Theme/vendors/metis/metisMenu.js"
+                // "~/Content/Theme/vendors/metis/metisMenu.min.js"
+                //, "~/Content/Theme/vendors/morris/morris.js"
+                //, "~/Content/Theme/vendors/morris/morris-data.js"
+                //, "~/Content/Theme/vendors/raphael/raphael.js"
+                //, "~/Content/Theme/vendors/raphael/raphael-min.js"
+                //, "~/Content/Theme/vendors/datatables/js/dataTables.bootstrap.js"
+                
+                //, "~/Content/Theme/vendors/datatables/js/jquery.dataTables.min.js"
+                //, "~/Content/Theme/vendors/datatables/js/dataTables.responsive.js"
+                //, "~/Content/Theme/vendors/datatables/js/dataTables.responsive.min.js"
+                ));
 
-            //bundles.Add(new StyleBundle("~/Content/Vendors").Include(
-            //    //"~/Content/Theme/vendors/metis/metisMenu.css"
-            //     "~/Content/Theme/vendors/metis/metisMenu.min.css"
-            //    , "~/Content/Theme/vendors/morris/morris.css"
-            //    , "~/Content/Theme/vendors/datatables/css/jquery.dataTables.css"
-            //    , "~/Content/Theme/vendors/datatables/css/dataTables.bootstrap.css"
-            //    , "~/Content/Theme/vendors/datatables/css/dataTables.responsive.css"
-            //    ));
+            bundles.Add(new StyleBundle("~/Content/Vendors").Include(
+                "~/Content/Theme/vendors/metis/metisMenu.min.css"
+                , "~/Content/Theme/vendors/morris/morris.css"
+                , "~/Content/Theme/vendors/datatables/css/jquery.dataTables.css"
+                , "~/Content/Theme/vendors/datatables/css/jquery.dataTables_themeroller.css"
+                , "~/Content/Theme/vendors/datatables/css/dataTables.responsive.css"
+                , "~/Content/Theme/css/AdminLTE.css"
+                ));
 
             
         }
