@@ -3,23 +3,16 @@
 @using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    <!-- left, vertical navbar -->
-    <ul class="sidebar-menu">
-        @*@Html.MenuItem(" Домой", "Index", "Home", "fa   fa-home fa-fw")
+        <!-- left, vertical navbar -->
+        <ul class="sidebar-menu" id="menu">
+            
+
+            <li class="header">Меню навигации</li>
+            
+            @Html.MenuItem(" Домой", "Index", "Home", "fa   fa-home fa-fw")
             @Html.MenuItem(" Доска", "Index", "Dashboard", "fa  fa-dashboard fa-fw")
             @Html.MenuItem(" Покупатели", "Index", "Shopper", "fa  fa-male fa-fw")
-            @Html.MenuItem(" Заявка", "Index", "Bid", "fa  fa-envelope-o fa-fw")*@
-            
-        <li class="header">Меню навигации</li>
-        <li class="active"><a href='@Url.Action("Index", "Home")'><i class="fa fa-home"></i> Домой</a></li>
-        <li><a href='@Url.Action("Index", "Dashboard")'><i class="fa fa-dashboard"></i> Доска</a></li>
-        <li><a href='@Url.Action("Index", "Shopper")'><i class="fa fa-group"></i> Покупатели</a></li>
-        <li><a href='@Url.Action("Index", "Bid")'><i class="fa fa-envelope"></i> Заявки</a></li>
-        
-    </ul>
-}
+            @Html.MenuItem(" Заявка", "Index", "Bid", "fa  fa-envelope-o fa-fw")
 
-@section scripts
-{
-    @Scripts.Render("~/bundles/vendors")
+        </ul>
 }

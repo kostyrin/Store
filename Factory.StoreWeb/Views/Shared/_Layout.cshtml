@@ -18,9 +18,9 @@
         
         <!-- Left side column. contains the sidebar -->
         <div class="main-sidebar">
-            <section class="sidebar">
+            <div class="sidebar">
                 @Html.Partial("_LeftMenu")
-            </section>
+            </div>
 
         </div>
         
@@ -44,6 +44,7 @@
          
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/js")
+    @Scripts.Render("~/bundles/vendors")
     
     <script>
         $(document).ready(function () {

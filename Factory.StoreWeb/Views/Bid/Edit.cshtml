@@ -10,6 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.BidId)
     
     <div class="form-horizontal">
         <h4>BidFormModel</h4>
@@ -26,7 +27,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ShopperId, "Покупатель", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ShopperId, Model.Shoppers, "--Select--", new { @class = "span11" })
+                @Html.DropDownListFor(model => model.ShopperId, Model.Shoppers, "--Select--", new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.ShopperId, "", new { @class = "text-danger" })
             </div>
         </div>

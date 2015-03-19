@@ -43,30 +43,22 @@ namespace Factory.StoreWeb
                       
                       ));
 
-            bundles.Add(new StyleBundle("~/Content/Theme/base/css").Include(
-                        "~/Content/Theme/base/jquery.ui.core.css",
-                        "~/Content/Theme/base/jquery.ui.resizable.css",
-                        "~/Content/Theme/base/jquery.ui.selectable.css",
-                        "~/Content/Theme/base/jquery.ui.accordion.css",
-                        "~/Content/Theme/base/jquery.ui.autocomplete.css",
-                        "~/Content/Theme/base/jquery.ui.button.css",
-                        "~/Content/Theme/base/jquery.ui.dialog.css",
-                        "~/Content/Theme/base/jquery.ui.slider.css",
-                        "~/Content/Theme/base/jquery.ui.tabs.css",
-                        "~/Content/Theme/base/jquery.ui.datepicker.css",
-                        "~/Content/Theme/base/jquery.ui.progressbar.css",
-                        "~/Content/Theme/base/jquery.ui.theme.css"));
+            //bundles.Add(new StyleBundle("~/Content/Theme/base/css").Include(
+            //            "~/Content/Theme/base/jquery.ui.core.css",
+            //            "~/Content/Theme/base/jquery.ui.resizable.css",
+            //            "~/Content/Theme/base/jquery.ui.selectable.css",
+            //            "~/Content/Theme/base/jquery.ui.accordion.css",
+            //            "~/Content/Theme/base/jquery.ui.autocomplete.css",
+            //            "~/Content/Theme/base/jquery.ui.button.css",
+            //            "~/Content/Theme/base/jquery.ui.dialog.css",
+            //            "~/Content/Theme/base/jquery.ui.slider.css",
+            //            "~/Content/Theme/base/jquery.ui.tabs.css",
+            //            "~/Content/Theme/base/jquery.ui.datepicker.css",
+            //            "~/Content/Theme/base/jquery.ui.progressbar.css",
+            //            "~/Content/Theme/base/jquery.ui.theme.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/vendors").Include(
-                  "~/Scripts/jquery-{version}.js"
-                , "~/Scripts/jquery-ui-{version}.js"
-                , "~/Scripts/bootstrap.js"
-                , "~/Content/Theme/vendors/datatables/js/jquery.dataTables.js"
-                , "~/Scripts/AdminLTE/app.js"
-                , "~/Scripts/AdminLTE/demo.js"
-                , "~/Scripts/AdminLTE/pages/dashboard.js"
-                , "~/Scripts/AdminLTE/pages/dashboard2.js"
-                //, "~/Content/Theme/vendors/metis/metisMenu.js"
+                "~/Content/Theme/vendors/metis/metisMenu.js"
                 // "~/Content/Theme/vendors/metis/metisMenu.min.js"
                 //, "~/Content/Theme/vendors/morris/morris.js"
                 //, "~/Content/Theme/vendors/morris/morris-data.js"
@@ -80,12 +72,7 @@ namespace Factory.StoreWeb
                 ));
 
             bundles.Add(new StyleBundle("~/Content/Vendors").Include(
-                "~/Content/Theme/vendors/metis/metisMenu.min.css"
-                , "~/Content/Theme/vendors/morris/morris.css"
-                , "~/Content/Theme/vendors/datatables/css/jquery.dataTables.css"
-                , "~/Content/Theme/vendors/datatables/css/jquery.dataTables_themeroller.css"
-                , "~/Content/Theme/vendors/datatables/css/dataTables.responsive.css"
-                , "~/Content/Theme/css/AdminLTE.css"
+                "~/Content/Theme/css/metisMenu.css"
                 ));
 
             
