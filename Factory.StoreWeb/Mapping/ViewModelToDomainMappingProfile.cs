@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Factory.StoreDomainModule.Entities;
 using Factory.StoreWeb.Models;
+using Factory.StoreWeb.Models.Bids;
 using Factory.StoreWeb.ViewModels;
 
 namespace Factory.StoreWeb.Mapping

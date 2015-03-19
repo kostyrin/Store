@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Factory.StoreWeb.ViewModels
+namespace Factory.StoreWeb.Models.Bids
 {
-    public class BidFormModel
+    public class BidViewModel
     {
         public long BidId { get; set; }
         public int ShopperId { get; set; }

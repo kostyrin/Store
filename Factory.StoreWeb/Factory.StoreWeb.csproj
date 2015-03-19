@@ -215,8 +215,8 @@
     <Compile Include="Mapping\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mapping\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="ViewModels\BidFormModel.cs" />
-    <Compile Include="ViewModels\BidViewModel.cs" />
+    <Compile Include="Models\Bids\BidFormModel.cs" />
+    <Compile Include="Models\Bids\BidViewModel.cs" />
     <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\Domain.cs" />
     <Compile Include="Models\IdentityModels.cs" />

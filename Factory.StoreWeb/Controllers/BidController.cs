@@ -7,6 +7,7 @@ using AutoMapper;
 using Factory.StoreDomainModule.Entities;
 using Factory.StoreServicesModule.Services;
 using Factory.StoreWeb.Models;
+using Factory.StoreWeb.Models.Bids;
 using Factory.StoreWeb.ViewModels;
 using Repository.Pattern.UnitOfWork;
 
