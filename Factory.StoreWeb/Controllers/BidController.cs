@@ -75,6 +75,14 @@ namespace Factory.StoreWeb.Controllers
             {
                 return HttpNotFound();
             }
+            var shoppers = _shopperService.GetShoppers();
+            editBid.Shoppers = shoppers.Select(s =>
+                          new SelectListItem
+                          {
+                              Selected = (s.Id == bid.ShopperId),
+                              Text = s.Name,
+                              Value = s.Id.ToString()
+                          });
             return View(editBid);
         }
 

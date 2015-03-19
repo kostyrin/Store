@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace Factory.StoreWeb.Models.Bids
 {
@@ -6,7 +8,7 @@ namespace Factory.StoreWeb.Models.Bids
     {
         public long BidId { get; set; }
         public int ShopperId { get; set; }
-        public string Shopper { get; set; }
+        public IEnumerable<SelectListItem> Shoppers { get; set; }
         public Nullable<int> EmployeeId { get; set; }
         public Nullable<System.DateTime> BidDate { get; set; }
         public Nullable<System.DateTime> RequiredDate { get; set; }

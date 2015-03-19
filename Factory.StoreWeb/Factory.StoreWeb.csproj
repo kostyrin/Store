@@ -486,6 +486,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\Theme\vendors\morris\" />
+    <Folder Include="Models\Shopper\" />
     <Folder Include="Views\Navbar\" />
   </ItemGroup>
   <ItemGroup>

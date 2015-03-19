@@ -18,6 +18,7 @@ namespace Factory.StoreDataModule.DataModel
             {
                 Name = "Позитрон",
                 Address = "Верхнеозерная 24",
+                IsActive = true,
                 ObjectState = ObjectState.Added
             };
             context.Shoppers.Add(shopper);
@@ -33,6 +34,7 @@ namespace Factory.StoreDataModule.DataModel
                 ObjectState = ObjectState.Added,
                 Shopper = shopper,
                 BidDate = DateTime.Now,
+                IsActive = true,
                 BidDetails = new Collection<SerialBidDetail>(new SerialBidDetail[]
                 {
                     new SerialBidDetail()
