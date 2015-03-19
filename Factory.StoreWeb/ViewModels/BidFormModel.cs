@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
-namespace Factory.StoreWeb.Models
+namespace Factory.StoreWeb.ViewModels
 {
-    public class BidViewModel
+    public class BidFormModel
     {
         public long BidId { get; set; }
         public int ShopperId { get; set; }

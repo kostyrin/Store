@@ -1,57 +1,23 @@
 ﻿@using Factory.StoreWeb.HtmlHelperExtensions
 @Styles.Render("~/Content/Vendors")
-<!-- left, vertical navbar -->
-<ul class="sidebar-menu">
-    @*@Html.MenuItem(" Домой", "Index", "Home", "fa   fa-home fa-fw")
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <!-- left, vertical navbar -->
+    <ul class="sidebar-menu">
+        @*@Html.MenuItem(" Домой", "Index", "Home", "fa   fa-home fa-fw")
             @Html.MenuItem(" Доска", "Index", "Dashboard", "fa  fa-dashboard fa-fw")
             @Html.MenuItem(" Покупатели", "Index", "Shopper", "fa  fa-male fa-fw")
             @Html.MenuItem(" Заявка", "Index", "Bid", "fa  fa-envelope-o fa-fw")*@
             
-    <li class="header">Меню навигации</li>
-    <li><a href='@Url.Action("Index", "Home")'><i class="fa fa-home"></i> Домой</a></li>
-    <li><a href='@Url.Action("Index", "Dashboard")'><i class="fa fa-dashboard"></i> Доска</a></li>
-    <li class="treeview">
-        <a href="#">
-            <i class="fa fa-group"></i> <span>Компания</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <li><a href='@Url.Action("Index", "Shopper")'><i class="fa fa-group"></i> Покупатели</a></li>
-        </ul>
-    </li>
-    <li class="treeview">
-        <a href="#">
-            <i class="fa fa-envelope"></i> <span>Заявки</span> <i class="fa fa-angle-left pull-right"></i>
-        </a>
-        <ul class="treeview-menu">
-            <li><a href='@Url.Action("Index", "Bid")'><i class="fa fa-envelope"></i> Заявки</a></li>
-        </ul>
-    </li>
-
-    @*<li>
-                <a href="#"><span class="badge pull-right">731</span> Orders</a>
-            </li>
-            <li>
-                <a href="#"><span class="badge pull-right">812</span> Invoices</a>
-            </li>
-            <li>
-                <a href="#"><span class="badge pull-right">27</span> Clients</a>
-            </li>
-            <li>
-                <a href="#"><span class="badge pull-right">1,234</span> Users</a>
-            </li>
-            <li>
-                <a href="#"><span class="badge pull-right">2,221</span> Messages</a>
-            </li>
-            <li>
-                <a href="#"><span class="badge pull-right">11</span> Reports</a>
-            </li>
-            <li>
-                <a href="#"><span class="badge pull-right">83</span> Errors</a>
-            </li>
-            <li>
-                <a href="#"><span class="badge pull-right">4,231</span> Logs</a>
-            </li>*@
-</ul>
+        <li class="header">Меню навигации</li>
+        <li class="active"><a href='@Url.Action("Index", "Home")'><i class="fa fa-home"></i> Домой</a></li>
+        <li><a href='@Url.Action("Index", "Dashboard")'><i class="fa fa-dashboard"></i> Доска</a></li>
+        <li><a href='@Url.Action("Index", "Shopper")'><i class="fa fa-group"></i> Покупатели</a></li>
+        <li><a href='@Url.Action("Index", "Bid")'><i class="fa fa-envelope"></i> Заявки</a></li>
+        
+    </ul>
+}
 
 @section scripts
 {
