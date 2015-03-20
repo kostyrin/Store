@@ -29,7 +29,7 @@ namespace Factory.StoreWeb.Controllers
         public ViewResult Index()
         {
             var bids = _bidService.GetBids();
-            var bidsDetails = Mapper.Map<IEnumerable<SerialBid>, IEnumerable<BidViewModel>>(bids);
+            var bidsDetails = Mapper.Map<IEnumerable<SerialBid>, IEnumerable<BidListModel>>(bids);
             foreach (var bid in bidsDetails)
             {
                 var shopper = _shopperService.GetShopperById(bid.ShopperId);
@@ -69,12 +69,13 @@ namespace Factory.StoreWeb.Controllers
         // GET: Bid/Edit/5
         public ActionResult Edit(int id)
         {
-            var bid = _bidService.GetBidById(id);
-            var editBid = Mapper.Map<SerialBid, BidFormModel>(bid);
+            var bid = _bidService.GetBidGraphById(id);
+            var editBid = Mapper.Map<SerialBid, BidModel>(bid);
             if (bid == null)
             {
                 return HttpNotFound();
             }
+            editBid.Details = Mapper.Map<IEnumerable<SerialBidDetail>, IEnumerable<BidModel.BidDetailModel>>(bid.BidDetails);
             var shoppers = _shopperService.GetShoppers();
             editBid.Shoppers = shoppers.Select(s =>
                           new SelectListItem

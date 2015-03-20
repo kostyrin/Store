@@ -14,6 +14,7 @@ namespace Factory.StoreServicesModule.Services
     {
         IEnumerable<SerialBid> GetBids();
         SerialBid GetBidById(int bidId);
+        SerialBid GetBidGraphById(int bidId);
     }
 
     public class BidService : Service<SerialBid>, IBidService
@@ -34,6 +35,11 @@ namespace Factory.StoreServicesModule.Services
         public SerialBid GetBidById(int bidId)
         {
             return _repository.GetBidById(bidId);
+        }
+
+        public SerialBid GetBidGraphById(int bidId)
+        {
+            return _repository.GetBidGraphById(bidId);
         }
     }
 }

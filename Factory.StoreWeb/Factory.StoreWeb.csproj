@@ -215,8 +215,8 @@
     <Compile Include="Mapping\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mapping\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Bids\BidFormModel.cs" />
-    <Compile Include="Models\Bids\BidViewModel.cs" />
+    <Compile Include="Models\Bids\BidModel.cs" />
+    <Compile Include="Models\Bids\BidListModel.cs" />
     <Compile Include="Models\DashboardViewModel.cs" />
     <Compile Include="Models\Domain.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -518,6 +518,9 @@
       <Project>{13798359-3c9f-44c3-a72f-0d32421dfae7}</Project>
       <Name>Factory.StoreServicesModule</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
