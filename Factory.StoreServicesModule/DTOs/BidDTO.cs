@@ -1,25 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
 
-namespace Factory.StoreWeb.Models.Bids
+namespace Factory.StoreServicesModule.DTOs
 {
-    public class BidModel
+    public class BidDTO
     {
-        public BidModel()
+        public BidDTO()
         {
             Details = new List<BidDetailModel>();
         }
 
         public long BidId { get; set; }
         public int ShopperId { get; set; }
-        public IEnumerable<SelectListItem> Shoppers { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
-        public Nullable<System.DateTime> BidDate { get; set; }
-        public Nullable<System.DateTime> RequiredDate { get; set; }
-        public Nullable<System.DateTime> ShippedDate { get; set; }
-        public Nullable<int> ShipVia { get; set; }
-        public Nullable<decimal> Freight { get; set; }
+        public int? EmployeeId { get; set; }
+        public DateTime? BidDate { get; set; }
+        public DateTime? RequiredDate { get; set; }
+        public DateTime? ShippedDate { get; set; }
+        public int? ShipVia { get; set; }
+        public decimal? Freight { get; set; }
         public string ShipName { get; set; }
         public string ShipAddress { get; set; }
         public string ShipCity { get; set; }

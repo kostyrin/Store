@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Factory.StoreWeb.Models.Bids
+namespace Factory.StoreServicesModule.DTOs
 {
-    public class BidListModel
+    public class BidListDTO
     {
         public long BidId { get; set; }
         public int ShopperId { get; set; }

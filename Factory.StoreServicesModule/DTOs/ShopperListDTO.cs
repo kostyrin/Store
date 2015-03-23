@@ -1,13 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Factory.StoreWeb.ViewModels
+﻿namespace Factory.StoreServicesModule.DTOs
 {
-    public class ShopperFormModel
+    public class ShopperListDTO
     {
         public string ShopperId { get; set; }
-
-        [Required(ErrorMessage = "*")]
-        [StringLength(50)]
         public string ShopperName { get; set; }
         public string ContactName { get; set; }
         public string ContactTitle { get; set; }
