@@ -28,10 +28,10 @@ namespace Factory.StoreWeb
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-                  "~/Scripts/angular.js"
-                , "~/Scripts/angular.min.js"
-                , "~/Scripts/angular-resource.js"
-                , "~/Scripts/angular-ui/ui-bootstrap-tpls-{version}.js"));
+                  "~/Scripts/angular/angular.js"
+                , "~/Scripts/angular/angular.min.js"
+                , "~/Scripts/angular/angular-resource.js"
+                , "~/Scripts/angular/ui-bootstrap-tpls-{version}.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                   "~/Content/bootstrap.css"

@@ -73,7 +73,7 @@
                     <tr data-ng-repeat="shopper in shoppers">
                         <td><strong data-ng-hide="shopper.editMode">{{ shopper.ShopperId }}</strong></td>
                         <td>
-                            <p data-ng-hide="shopper.editMode">{{ shopper.Name }}</p>
+                            <p data-ng-hide="shopper.editMode">{{ shopper.ShopperName }}</p>
                             <input data-ng-show="shopper.editMode" type="text" data-ng-model="shopper.ShopperName" />
                         </td>
                         <td>
